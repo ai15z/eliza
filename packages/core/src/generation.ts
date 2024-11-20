@@ -1039,7 +1039,7 @@ async function handleOpenAI({
     mode,
     modelOptions,
 }: ProviderOptions): Promise<GenerateObjectResult<unknown>> {
-    const openai = createOpenAI({ apiKey });
+    const openai = createOpenAI({ apiKey, baseURL: models.openai.endpoint });
     return await aiGenerateObject({
         model: openai.languageModel(model),
         schema,
